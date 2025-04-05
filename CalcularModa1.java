@@ -1,6 +1,6 @@
 //Actividad 4: Solución 1
 
-public class CalcularModa {
+public class CalcularModa1 {
 
     public static int moda1(int array[]) {
         int first = 0;
