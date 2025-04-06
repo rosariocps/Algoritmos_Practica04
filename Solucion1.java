@@ -1,6 +1,6 @@
 //Actividad 4: Solución 1
 
-public class CalcularModa1 {
+public class Solucion1 {
 
     private static int frecuencia(int[] array, int first, int end, int ele) { 
         if (first > end) return 0;                                  // O(1)                                         
