@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Solucion2 {
 
     public static int moda2(int array[]) { 
@@ -23,6 +25,18 @@ public class Solucion2 {
             }
         }
 
-        return moda;
+        return moda;        
     }
+
+    public static void main(String[] args) {
+        int[] numeros = {3, 1, 2, 3, 1, 3, 2, 2, 3}; // Desordenado
+
+        //Se debe ordenar para que funcione el método moda2
+        Arrays.sort(numeros);
+
+        int resultado = moda2(numeros);
+        System.out.println("La moda del arreglo es: " + resultado);
+    }
+
+
 }
