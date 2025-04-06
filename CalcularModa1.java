@@ -39,7 +39,7 @@ public class CalcularModa1 {
     //Complejidad Algoritmica de moda1: O(n^2)
 
     public static void main(String[] args) {
-        int[] numeros = {2, 4, 6, 4};
+        int[] numeros = {2, 4, 6, 4, 6};
 
         int resultado = moda1(numeros);
         System.out.println("La moda del arreglo es: " + resultado);
