@@ -29,7 +29,7 @@ public class Solucion2 {
     }
 
     public static void main(String[] args) {
-        int[] numeros = {3, 1, 2, 3, 1, 3, 2, 2, 3}; // Desordenado
+        int[] numeros = {3, 1, 2, 3, 1, 3, 2, 2, 3}; // Esta desordenado
 
         //Se debe ordenar para que funcione el método moda2
         Arrays.sort(numeros);
@@ -38,5 +38,6 @@ public class Solucion2 {
         System.out.println("La moda del arreglo es: " + resultado);
     }
 
-
 }
+
+
