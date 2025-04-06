@@ -2,8 +2,7 @@
 
 public class CalcularModa1 {
 
-    
-    private static int frecuencia(int[] array, int first, int end, int ele) {    
+    private static int frecuencia(int[] array, int first, int end, int ele) { 
         if (first > end) return 0;                                  // O(1)                                         
         int suma = 0;                                               // O(1)
         for (int i = first; i <= end; i++) {                        // O(n)
@@ -38,4 +37,12 @@ public class CalcularModa1 {
         return moda;
     }
     //Complejidad Algoritmica de moda1: O(n^2)
+
+    public static void main(String[] args) {
+        int[] numeros = {2, 4, 6, 4};
+
+        int resultado = moda1(numeros);
+        System.out.println("La moda del arreglo es: " + resultado);
+    }
+
 }
