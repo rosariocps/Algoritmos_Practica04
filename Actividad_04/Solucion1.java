@@ -1,3 +1,4 @@
+package Actividad_04;
 //Actividad 4: Solución 1
 
 public class Solucion1 {

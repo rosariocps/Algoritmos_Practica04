@@ -1,3 +1,4 @@
+package Actividad_04;
 import java.util.Arrays;
 
 public class Solucion2 {
