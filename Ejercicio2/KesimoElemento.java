@@ -41,4 +41,27 @@ public class KesimoElemento {
         arr[i] = arr[j]; // ponemos el valor de arr[j] en arr[i]
         arr[j] = temp; // ponemos el valor guardado de arr[i] en arr[j]
     }
+    // metodo para ejecutar las pruebas predefinidas con valores de ejemplo
+    public static void ejecutarPruebas() {
+        String[] pruebas = {
+            "4 2 7 10 4 17, 3",  // 4
+            "4 2 7 10 4 1 6, 5",  // 6
+            "4 2 7 1 4 6, 1",     // 1
+            "9 2 7 1 7, 4"        // 7
+        };
+
+        // recorremos cada prueba predefinida
+        for (String prueba : pruebas) {
+            String[] partes = prueba.split(", "); // separamos el arreglo y el valor de k
+            String[] arregloStr = partes[0].split(" "); // separamos los elementos del arreglo
+            int[] arreglo = new int[arregloStr.length]; // creamos un arreglo para los elementos
+            for (int i = 0; i < arregloStr.length; i++) { // convertimos los valores de String a int
+                arreglo[i] = Integer.parseInt(arregloStr[i]);
+            }
+            int k = Integer.parseInt(partes[1]); // leemos el valor de k
+            System.out.println("\nEntrada: " + partes[0] + " k = " + k);
+            int resultado = quickSelect(arreglo, 0, arreglo.length - 1, k - 1); // buscamos el k-ésimo elemento
+            System.out.println("Resultado: " + resultado);
+        }
+    }
 }
