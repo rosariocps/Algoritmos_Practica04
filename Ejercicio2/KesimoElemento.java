@@ -35,4 +35,10 @@ public class KesimoElemento {
         intercambiar(arr, i, fin); // colocamos el pivote en su posición final
         return i; // devolvemos la posición del pivote
     }
+    // metodo para intercambiar dos elementos en el arreglo
+    public static void intercambiar(int[] arr, int i, int j) {
+        int temp = arr[i]; // guardamos temporalmente el valor de arr[i]
+        arr[i] = arr[j]; // ponemos el valor de arr[j] en arr[i]
+        arr[j] = temp; // ponemos el valor guardado de arr[i] en arr[j]
+    }
 }
