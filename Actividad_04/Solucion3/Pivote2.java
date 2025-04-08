@@ -16,7 +16,24 @@ public class Pivote2 {
                 temporal[derechaPuntero--] = arreglo[i];
             }
         }
+     
+        int indice = inicio;
+        for (int i = 0; i < izquierdaPuntero; i++) arreglo[indice++] = temporal[i];
+        for (int i = 0; i < contadorCentro; i++) arreglo[indice++] = valorPivote;
+        for (int i = temporal.length - 1; i > derechaPuntero; i--) arreglo[indice++] = temporal[i];
 
+        int finIzquierda = inicio + izquierdaPuntero - 1;
+        int inicioCentro = finIzquierda + 1;
+        int finCentro = inicioCentro + contadorCentro - 1;
+
+        izquierda.inicio = inicio;
+        izquierda.fin = finIzquierda;
+
+        centro.inicio = inicioCentro;
+        centro.fin = finCentro;
+
+        derecha.inicio = finCentro + 1;
+        derecha.fin = fin;
     }
 }
 
