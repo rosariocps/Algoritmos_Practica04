@@ -44,4 +44,29 @@ public class PythagorasTree extends JPanel {
         trazaArbol(g, x2, y2, nuevoLado, angulo - 45, nivel - 1); // llamado recursivo hacia la izquierda
         trazaArbol(g, x2, y2, nuevoLado, angulo + 45, nivel - 1); // llamado recursivo hacia la derecha
     }
+    public static void main(String[] args) {       
+        // creamos el arbol con 6 niveles y lo añadimos a la ventana
+        PythagorasTree arbol6 = new PythagorasTree(6);
+        JFrame frame6 = new JFrame("Árbol de Pitágoras - 6 Niveles"); // creamos una ventana con el título
+        frame6.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // configuramos que la aplicación se cierre al cerrar la ventana
+        frame6.setSize(800, 800); // establecemos el tamaño de la ventana a 800x800 píxeles
+        frame6.add(arbol6); 
+        frame6.setVisible(true); // hacemos visible la ventana
+        
+        // creamos otro arbol con 8 niveles y una nueva ventana para mostrarlo
+        PythagorasTree arbol8 = new PythagorasTree(8);
+        JFrame frame8 = new JFrame("Árbol de Pitágoras - 8 Niveles"); // creamos una ventana con el título
+        frame8.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // configuramos que la aplicación se cierre al cerrar la ventana
+        frame8.setSize(800, 800); // establecemos el tamaño de la ventana a 800x800 píxeles
+        frame8.add(arbol8);
+        frame8.setVisible(true);
+
+        // creamos otro arbol con 10 niveles y otra ventana para mostrarlo
+        PythagorasTree arbol10 = new PythagorasTree(10);
+        JFrame frame10 = new JFrame("Árbol de Pitágoras - 10 Niveles"); // creamos una ventana con el título
+        frame10.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // configuramos que la aplicación se cierre al cerrar la ventana
+        frame10.setSize(800, 800); // establecemos el tamaño de la ventana a 800x800 píxeles
+        frame10.add(arbol10);
+        frame10.setVisible(true);
+    }
 }
