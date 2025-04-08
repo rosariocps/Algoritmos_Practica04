@@ -64,4 +64,53 @@ public class KesimoElemento {
             System.out.println("Resultado: " + resultado);
         }
     }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion = -1; // inicializamos la opcion con un valor fuera del rango
+
+        while (opcion != 0) { // el ciclo se ejecuta mientras la opcion no sea 0
+            System.out.println("\n--- MENÚ ---");
+            System.out.println("1. Ingresar un conjunto de datos");
+            System.out.println("2. Ejecutar pruebas de ejemplo");
+            System.out.println("0. Salir");
+            System.out.print("Elige una opción: ");
+            opcion = scanner.nextInt(); // leemos la opcion del usuario
+            scanner.nextLine(); // limpiamos el buffer de entrada
+
+            switch (opcion) {
+                case 1: // caso para ingresar un conjunto de datos
+                    System.out.print("Ingresa los elementos del arreglo separados por espacio: ");
+                    String[] entrada = scanner.nextLine().split(" "); // leemos los datos y separarlos por espacio
+                    int[] arreglo = new int[entrada.length]; // creamos un arreglo con el tamaño de los datos ingresados
+                    for (int i = 0; i < entrada.length; i++) { // recorremos el arreglo para convertir los datos de String a int
+                        arreglo[i] = Integer.parseInt(entrada[i]);
+                    }
+
+                    System.out.print("Ingresa el valor de k (1 para el menor, n (cant del arreglo) para el mayor): ");
+                    int k = scanner.nextInt(); // leemos el valor de k
+
+                    if (k < 1 || k > arreglo.length) { // verificamos si k está dentro del rango válido
+                        System.out.println("k está fuera del rango válido.");
+                    } else {
+                        int resultado = quickSelect(arreglo, 0, arreglo.length - 1, k - 1); // llamamos a la función quickSelect
+                        System.out.println("El elemento número " + k + " más pequeño es: " + resultado);
+                    }
+                    break;
+
+                case 2: // caso para ejecutar las pruebas de ejemplo
+                    ejecutarPruebas(); // llamamos a la función que ejecuta las pruebas
+                    break;
+
+                case 0: // caso para salir del programa
+                    System.out.println("El programa termino :]");
+                    break;
+
+                default: // si la opción es invalida
+                    System.out.println("Opción inválida.");
+            }
+
+        }
+
+        scanner.close(); // cerramos el scanner para evitar posibles fugas de recursos
+    }
 }
