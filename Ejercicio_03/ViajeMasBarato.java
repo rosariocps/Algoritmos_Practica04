@@ -1,6 +1,5 @@
 package Ejercicio_03;
 
-
 public class ViajeMasBarato {
 
     static int[][] calcularCostosMinimos(int[][] tarifas) {
