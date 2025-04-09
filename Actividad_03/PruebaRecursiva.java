@@ -1,3 +1,5 @@
+package Actividad_03;
+
 public class PruebaRecursiva {
     public static void main(String[] args) {
         BinarySearchRecursivo buscador = new BinarySearchRecursivo();
