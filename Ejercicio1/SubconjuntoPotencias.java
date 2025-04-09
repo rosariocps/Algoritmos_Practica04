@@ -3,26 +3,79 @@ package Ejercicio1;
 import java.util.*;
 
 public class SubconjuntoPotencias {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in); // Creamos un objeto Scanner para leer datos
+        int opcion = -1; // Variable para almacenar la opción del menú
+
+        // Empezamos un ciclo while que va a seguir ejecutándose hasta que se elija la opción de salir (0)
+        while (opcion != 0) {
+            System.out.println("\n--- MENÚ ---");
+            System.out.println("1. Ingresar un conjunto manualmente");
+            System.out.println("2. Ejecutar pruebas de ejemplo");
+            System.out.println("0. Salir");
+            System.out.print("Elige una opción: ");
+            opcion = sc.nextInt(); // Leemos la opción elegida
+            sc.nextLine(); // Limpiamos el buffer del Scanner
+
+            // Usamos un switch para manejar las opciones del menú
+            switch (opcion) {
+                case 1:
+                    // Opción 1: el usuario ingresa un conjunto manualmente
+                    System.out.println("NOTA:");
+                    System.out.println("- 1er num -> cantidad de elementos del arreglo ");
+                    System.out.println("- Luego los elementos del arreglo");
+                    System.out.println("- Último número -> objetivo (suma esperada)");
+                    System.out.print("Ingresa los números separados por espacio (ej. 5 2 4 8 10 3 14): ");
+                    String linea = sc.nextLine(); // Leemos la línea de entrada
+                    procesarEntrada(linea); // Procesamos la entrada
+                    break;
+
+                case 2:
+                    // Opción 2: ejecutar pruebas predefinidas
+                    ejecutarPruebas();
+                    break;
+
+                case 0:
+                    // Opción 0: Salir del programa
+                    System.out.println("chauuu");
+                    break;
+
+                default:
+                    // Si el usuario ingresa una opción inválida
+                    System.out.println("Opción inválida.");
+            }
+        }
+    }
+    // Método para procesar la entrada que el usuario da
     public static void procesarEntrada(String linea) {
-        String[] partes = linea.trim().split(" "); // separamos los numeros por espacios
-        int N = Integer.parseInt(partes[0]); // el primer numero es la cantidad de elementos
-        int[] arreglo = new int[N]; // creamos el arreglo con ese tamaño
+        String[] partes = linea.trim().split(" "); // Separamos la entrada en partes
+        int N = Integer.parseInt(partes[0]); // El primer número es la cantidad de elementos
+        int[] arreglo = new int[N]; // Creamos un arreglo con los elementos
 
         for (int i = 0; i < N; i++) {
-            arreglo[i] = Integer.parseInt(partes[i + 1]); // guardamos los numeros en el arreglo
+            arreglo[i] = Integer.parseInt(partes[i + 1]); // Llenamos el arreglo con los valores
         }
 
-        int objetivo = Integer.parseInt(partes[partes.length - 1]); // el ultimo numero es el objetivo
-        boolean resultado = sePuedeFormarSuma(arreglo, objetivo); // vemos si se puede formar la suma
-        System.out.println("Resultado: " + resultado); // mostramos el resultado
+        int objetivo = Integer.parseInt(partes[partes.length - 1]); // El último número es el objetivo
+        boolean resultado = sePuedeFormarSuma(arreglo, objetivo); // Llamamos al método que verifica si es posible formar la suma
+        System.out.println("Resultado: " + resultado); // Mostramos el resultado
     }
-    public static void ejecutarPruebaEjemplo() {
-        String prueba = "5 4 8 10 3 6 27"; // esta es la prueba de ejemplo que se va a usar
-        System.out.println("\nPrueba de ejemplo:");
-        System.out.println("Entrada: " + prueba);
-        procesarEntrada(prueba); // mandamos la prueba al metodo que procesa la entrada
-    }
+    public static void ejecutarPruebas() {
+        String[] pruebas = {
+            "5 2 4 8 10 3 14",    // true
+            "5 4 8 10 3 5 27",    // false
+            "5 4 8 10 3 6 27",    // false
+            "6 2 16 5 7 10 33",   // false
+            "6 2 16 5 3 10 33",   // false
+            "4 2 5 1 6 13"        // false
+        };
 
+        // Ejecutamos cada prueba
+        for (String prueba : pruebas) {
+            System.out.println("\nEntrada: " + prueba); // Mostramos la entrada
+            procesarEntrada(prueba); // Procesamos la entrada
+        }
+    }
     public static boolean sePuedeFormarSuma(int[] arr, int objetivo) {
         List<Integer> obligatorios = new ArrayList<>(); // aqui se guardan los numeros que son potencias de 2
         List<Integer> opcionales = new ArrayList<>(); // aqui van los demas numeros validos
