@@ -13,5 +13,7 @@ public class PrincipalPrueba {
         TorresDeHanoi.torresHanoi(numDiscos, 1, 2, 3);
         //Total de movimientos
         System.out.println("\nTotal de movimientos: " + TorresDeHanoi.obtenerMovimientos());
+
+        scannerr.close();
     }
 }
