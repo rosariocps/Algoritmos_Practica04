@@ -139,6 +139,4 @@ public class SubconjuntoPotencias {
         return dp[n][objetivo]; // devuelve si se puede llegar al objetivo exacto
     }
 
-
-
 }

@@ -1,9 +1,7 @@
 package Actividad2;
 
-import javax.swing.*; // importa las clases para crear la interfaz grafica
-import java.awt.*; // importa las clases para trabajar con gráficos
-import java.awt.geom.*; // importa clases para manejar geometría
-import java.util.*; // importa clases de utilidades como listas
+import java.awt.*; // importa las clases para crear la interfaz grafica
+import javax.swing.*; // importa las clases para trabajar con gráficos
 
 public class PythagorasTree extends JPanel {
     private int profundidad; // guardamos el nivel de profundidad del arbol
@@ -44,6 +42,7 @@ public class PythagorasTree extends JPanel {
         trazaArbol(g, x2, y2, nuevoLado, angulo - 45, nivel - 1); // llamado recursivo hacia la izquierda
         trazaArbol(g, x2, y2, nuevoLado, angulo + 45, nivel - 1); // llamado recursivo hacia la derecha
     }
+
     public static void main(String[] args) {       
         // creamos el arbol con 6 niveles y lo añadimos a la ventana
         PythagorasTree arbol6 = new PythagorasTree(6);
